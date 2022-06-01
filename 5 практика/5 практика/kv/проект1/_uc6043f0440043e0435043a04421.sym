@@ -1,0 +1,92 @@
+__Lrdata 34 FFFFFFCF DATA
+__Hrbss 34 0 DATA
+__Lrbss 20 0 DATA
+strx_xcopy 3 0 CODE
+__Birdata 3 FFFFFFCF DATA
+__Hirdata 34 FFFFFFCF DATA
+__Lirdata 34 FFFFFFCF DATA
+powerup 58 0 CODE
+__Htext 34 0
+__Ltext 34 0
+strx_copy 19 0 CODE
+__Hcode 34 0
+__Lcode 34 0
+__Hdata 110 0 CODE
+__Hconst 100 0 CODE
+__Ldata 100 0 CODE
+__Lconst 100 0 CODE
+__Bbss 34 0 XDATA
+__Hbss 34 0 XDATA
+__Hstrings 100 0 CODE
+__Lbss 34 0 XDATA
+__Lstrings 100 0 CODE
+str_xcopy 3 0 CODE
+__S0 264 0
+start1 44 0 CODE
+__Hnvram 34 0 XDATA
+small_model 1 0
+__Lnvram 34 0 XDATA
+__Hheap 34 0 XDATA
+__Lheap 34 0 XDATA
+_main 110 0 CODE
+str_copy 19 0 CODE
+?a_main 20 0 DATA
+_exit 55 0 CODE
+start 0 0 CODE
+intlevel0 0 0
+strx_load 19 0 CODE
+__Brbit 20 20 BITSEG
+str_load 19 0 CODE
+__Hrbit 0 20 BITSEG
+intlevel1 0 0
+__Hvectors 3 0 CODE
+__Lrbit 0 20 BITSEG
+__Lvectors 0 0 CODE
+__Bidata 34 0 DATA
+__Hidata 34 0 DATA
+__Lidata 34 0 DATA
+stack_internal 1 0
+__Brdata 3 FFFFFFCF DATA
+__Hrdata 34 FFFFFFCF DATA
+%segments
+vectors 0 5A CODE
+rbit 0 13 BITSEG
+data 100 263 CODE
+%locals
+E:\свеаю\гелжнб\5опюйр~1\5опюйр~1\kv\опнейр1\main_0.obj
+E:\свеаю\гелжнб\5опюйр~1\5опюйр~1\kv\опнейр1\main.c
+3 110 0 CODE
+7 113 0 CODE
+8 122 0 CODE
+10 12C 0 CODE
+11 12F 0 CODE
+12 132 0 CODE
+13 135 0 CODE
+14 138 0 CODE
+15 13B 0 CODE
+19 13E 0 CODE
+20 140 0 CODE
+21 151 0 CODE
+22 162 0 CODE
+23 173 0 CODE
+24 184 0 CODE
+26 186 0 CODE
+27 188 0 CODE
+28 199 0 CODE
+29 1AA 0 CODE
+30 1BB 0 CODE
+31 1CC 0 CODE
+33 1CE 0 CODE
+34 1D0 0 CODE
+35 1E1 0 CODE
+36 1F2 0 CODE
+37 203 0 CODE
+38 214 0 CODE
+40 216 0 CODE
+41 218 0 CODE
+42 229 0 CODE
+43 23A 0 CODE
+44 24B 0 CODE
+45 25B 0 CODE
+17 25D 0 CODE
+48 260 0 CODE

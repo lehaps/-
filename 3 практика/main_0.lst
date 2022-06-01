@@ -1,0 +1,885 @@
+
+
+HI-TECH Software 8051 Macro Assembler V9.60                                Page 1
+                                                       Sat Apr 02 17:00:49 2022
+
+     1                           	psect	idata,class=DATA,space=1,limit=080h
+     2                           	psect	irdata,class=DATA,limit=080h
+     3                           	global	_main
+     4                           	signat	_main,88
+     5                           	global	stack_internal
+     6                           	psect	text,class=CODE
+     7                           	psect	text
+     8                           	file	"E:\”◊≈¡¿\«≈Ã÷Œ¬\3œ–¿ “~1\3œ–¿ “~1\project
+                                 1\main.c"
+     9                           	line	5
+    10  0000'                    _main:
+    11  0000' 02 0295'           	j	f1411
+    12  0003'                    f1410:
+    13                           ;main.c: 3: void main()
+    14                           
+    15                           ;main.c: 5: {
+    16                           
+    17                           ;	var   _i assigned to ?a_main+0
+    18                           ;	var   _k assigned to ?a_main+2
+    19                           ;	var   _j assigned to ?a_main+4
+    20                           ;	var   _p assigned to ?a_main+6
+    21                           ;	var   _str assigned to ?a_main+8
+    22                           ;main.c: 6: unsigned int i, k, j, p;
+    23                           
+    24                           ;main.c: 7: unsigned char* str = "Hello!";
+    25                           
+    26                           	line	7
+    27  0003' 75 08' 00'         	mov	?a_main+8,#high(0+u19)
+    28  0006' 75 09' 00'         	mov	?a_main+8+1,#low(0+u19)
+    29                           ;	var   _str2 assigned to ?a_main+10
+    30                           ;main.c: 8: unsigned char* str2 = "Friends";
+    31                           
+    32                           	line	8
+    33  0009' 75 0A' 00'         	mov	?a_main+10,#high(0+u29)
+    34  000C' 75 0B' 00'         	mov	?a_main+10+1,#low(0+u29)
+    35                           ;	var   _str3 assigned to ?a_main+12
+    36                           ;main.c: 9: unsigned char* str3 = " ";
+    37                           
+    38                           	line	9
+    39  000F' 75 0C' 00'         	mov	?a_main+12,#high(0+u39)
+    40  0012' 75 0D' 00'         	mov	?a_main+12+1,#low(0+u39)
+    41                           ;main.c: 10: P0 = 0x38;
+    42                           
+    43                           	line	10
+    44  0015' 75 80 38           	mov	080h,#56
+    45                           ;main.c: 11: P2 = 0x1;
+    46                           
+    47                           	line	11
+    48  0018' 75 A0 01           	mov	0A0h,#1
+    49                           ;main.c: 12: P2 = 0x0;
+    50                           
+    51                           	line	12
+    52  001B' 75 A0 00           	mov	0A0h,#0
+    53                           ;main.c: 13: P0 = 0x8A;
+    54                           
+    55                           	line	13
+    56  001E' 75 80 8A           	mov	080h,#138
+    57                           ;main.c: 14: P2 = 0x1;
+    58                           
+    59                           	line	14
+    60  0021' 75 A0 01           	mov	0A0h,#1
+    61                           ;main.c: 15: P2 = 0x0;
+    62                           
+    63                           	line	15
+    64  0024' 75 A0 00           	mov	0A0h,#0
+    65                           ;main.c: 16: P0 = 0xC;
+    66                           
+    67                           	line	16
+    68  0027' 75 80 0C           	mov	080h,#12
+    69                           ;main.c: 17: P2 = 0x1;
+    70                           
+    71                           	line	17
+    72  002A' 75 A0 01           	mov	0A0h,#1
+    73                           ;main.c: 18: P2 = 0x0;
+    74                           
+    75                           	line	18
+    76  002D' 75 A0 00           	mov	0A0h,#0
+    77                           ;main.c: 19: p = 0x80;
+    78                           
+    79                           	line	19
+    80  0030' 75 06' 00          	mov	?a_main+6,#high(128)
+    81  0033' 75 07' 80          	mov	?a_main+6+1,#low(128)
+    82                           ;main.c: 20: for (i = 0; i < 6; i++)
+    83                           
+    84                           	line	20
+    85  0036' E4                 	clr	a
+    86  0037' F5 00'             	mov	?a_main+0,a
+    87  0039' F5 01'             	mov	?a_main+0+1,a
+    88  003B' E5 01'             	mov	a,?a_main+0+1
+    89  003D' 24 FA              	add	a,#low -(6)
+    90  003F' E5 00'             	mov	a,?a_main+0
+    91  0041' 34 FF              	addc	a,#high -(6)
+    92  0043' 50 02              	bnc	u11
+    93  0045' 80 02              	jmp	u10
+    94  0047'                    u11:
+    95  0047' 80 02              	jmp	l3
+    96  0049'                    u10:
+    97  0049' 80 2D              	jmp	l4
+    98                           	line	21
+    99  004B'                    l3:
+   100                           ;main.c: 21: {
+   101                           
+   102                           ;main.c: 22: P0 = str[i];
+   103                           
+   104                           	line	22
+   105  004B' E5 01'             	mov	a,?a_main+0+1
+   106  004D' 25 09'             	add	a,?a_main+8+1
+   107  004F' F5 82              	mov	dpl,a
+   108  0051' E5 00'             	mov	a,?a_main+0
+   109  0053' 35 08'             	addc	a,?a_main+8
+   110  0055' F5 83              	mov	dph,a
+   111                           	global	ldc_byte
+   112  0057' 12 0000'           	call	ldc_byte
+   113  005A' F5 80              	mov	080h,a
+   114                           ;main.c: 23: P2 = 0x3;
+   115                           
+   116                           	line	23
+   117  005C' 75 A0 03           	mov	0A0h,#3
+   118                           ;main.c: 24: P2 = 0x2;
+   119                           
+   120                           	line	24
+   121  005F' 75 A0 02           	mov	0A0h,#2
+   122                           	line	20
+   123  0062' 05 01'             	inc	?a_main+0+1
+   124  0064' E5 01'             	mov	a,?a_main+0+1
+   125  0066' 70 02              	jnz	u20
+   126  0068' 05 00'             	inc	?a_main+0
+   127  006A'                    u20:
+   128  006A' E5 01'             	mov	a,?a_main+0+1
+   129  006C' 24 FA              	add	a,#low -(6)
+   130  006E' E5 00'             	mov	a,?a_main+0
+   131  0070' 34 FF              	addc	a,#high -(6)
+   132  0072' 50 02              	bnc	u31
+   133  0074' 80 02              	jmp	u30
+   134  0076'                    u31:
+   135  0076' 80 D3              	jmp	l3
+   136  0078'                    u30:
+   137  0078'                    l4:
+   138                           ;main.c: 25: }
+   139                           
+   140                           ;main.c: 26: while(1){
+   141                           
+   142                           	line	26
+   143  0078'                    l7:
+   144                           ;main.c: 27: P0 = 0xCF;
+   145                           
+   146                           	line	27
+   147  0078' 75 80 CF           	mov	080h,#207
+   148                           ;main.c: 28: P2 = 0x1;
+   149                           
+   150                           	line	28
+   151  007B' 75 A0 01           	mov	0A0h,#1
+   152                           ;main.c: 29: P2 = 0x0;
+   153                           
+   154                           	line	29
+   155  007E' 75 A0 00           	mov	0A0h,#0
+   156                           ;main.c: 30: for(i=0;i<6;i++)
+   157                           
+   158                           	line	30
+   159  0081' E4                 	clr	a
+   160  0082' F5 00'             	mov	?a_main+0,a
+   161  0084' F5 01'             	mov	?a_main+0+1,a
+   162  0086' E5 01'             	mov	a,?a_main+0+1
+   163  0088' 24 FA              	add	a,#low -(6)
+   164  008A' E5 00'             	mov	a,?a_main+0
+   165  008C' 34 FF              	addc	a,#high -(6)
+   166  008E' 50 02              	bnc	u41
+   167  0090' 80 02              	jmp	u40
+   168  0092'                    u41:
+   169  0092' 80 03              	jmp	l9
+   170  0094'                    u40:
+   171  0094' 02 0119'           	jmp	l10
+   172                           	line	31
+   173  0097'                    l9:
+   174                           ;main.c: 31: {
+   175                           
+   176                           ;main.c: 32: for(k=0;k<=i;k++){
+   177                           
+   178                           	line	32
+   179  0097' E4                 	clr	a
+   180  0098' F5 02'             	mov	?a_main+2,a
+   181  009A' F5 03'             	mov	?a_main+2+1,a
+   182  009C' 80 1F              	jmp	l15
+   183  009E'                    l12:
+   184                           ;main.c: 33: P0 = str2[k];
+   185                           
+   186                           	line	33
+   187  009E' E5 03'             	mov	a,?a_main+2+1
+   188  00A0' 25 0B'             	add	a,?a_main+10+1
+   189  00A2' F5 82              	mov	dpl,a
+   190  00A4' E5 02'             	mov	a,?a_main+2
+   191  00A6' 35 0A'             	addc	a,?a_main+10
+   192  00A8' F5 83              	mov	dph,a
+   193                           	global	ldc_byte
+   194  00AA' 12 0000'           	call	ldc_byte
+   195  00AD' F5 80              	mov	080h,a
+   196                           ;main.c: 34: P2 = 0x3;
+   197                           
+   198                           	line	34
+   199  00AF' 75 A0 03           	mov	0A0h,#3
+   200                           ;main.c: 35: P2 = 0x2;
+   201                           
+   202                           	line	35
+   203  00B2' 75 A0 02           	mov	0A0h,#2
+   204                           	line	32
+   205  00B5' 05 03'             	inc	?a_main+2+1
+   206  00B7' E5 03'             	mov	a,?a_main+2+1
+   207  00B9' 70 02              	jnz	u50
+   208  00BB' 05 02'             	inc	?a_main+2
+   209  00BD'                    u50:
+   210  00BD'                    l15:
+   211  00BD' E5 02'             	mov	a,?a_main+2
+   212  00BF' B5 00' 07          	cbne	a,?a_main+0,u62
+   213  00C2' E5 03'             	mov	a,?a_main+2+1
+   214  00C4' B5 01' 02          	cbne	a,?a_main+0+1,u62
+   215  00C7' 80 04              	jmp	u61
+   216  00C9'                    u62:
+   217  00C9' 50 04              	bnc	u60
+   218  00CB' 80 00              	jmp	u61
+   219  00CD'                    u61:
+   220  00CD' 80 CF              	jmp	l12
+   221  00CF'                    u60:
+   222  00CF'                    l13:
+   223                           ;main.c: 36: }
+   224                           
+   225                           ;main.c: 37: P0 = 0xCF;
+   226                           
+   227                           	line	37
+   228  00CF' 75 80 CF           	mov	080h,#207
+   229                           ;main.c: 38: P2 = 0x1;
+   230                           
+   231                           	line	38
+   232  00D2' 75 A0 01           	mov	0A0h,#1
+   233                           ;main.c: 39: P2 = 0x0;
+   234                           
+   235                           	line	39
+   236  00D5' 75 A0 00           	mov	0A0h,#0
+   237                           ;main.c: 40: for(k=0;k<=i;k++){
+   238                           
+   239                           	line	40
+   240  00D8' E4                 	clr	a
+   241  00D9' F5 02'             	mov	?a_main+2,a
+   242  00DB' F5 03'             	mov	?a_main+2+1,a
+   243  00DD' 80 11              	jmp	l19
+   244  00DF'                    l16:
+   245                           ;main.c: 41: P0 = 0x10;
+   246                           
+   247                           	line	41
+   248  00DF' 75 80 10           	mov	080h,#16
+   249                           ;main.c: 42: P2 = 0x1;
+   250                           
+   251                           	line	42
+   252  00E2' 75 A0 01           	mov	0A0h,#1
+   253                           ;main.c: 43: P2 = 0x0;
+   254                           
+   255                           	line	43
+   256  00E5' 75 A0 00           	mov	0A0h,#0
+   257                           	line	40
+   258  00E8' 05 03'             	inc	?a_main+2+1
+   259  00EA' E5 03'             	mov	a,?a_main+2+1
+   260  00EC' 70 02              	jnz	u70
+   261  00EE' 05 02'             	inc	?a_main+2
+   262  00F0'                    u70:
+   263  00F0'                    l19:
+   264  00F0' E5 02'             	mov	a,?a_main+2
+   265  00F2' B5 00' 07          	cbne	a,?a_main+0,u82
+   266  00F5' E5 03'             	mov	a,?a_main+2+1
+   267  00F7' B5 01' 02          	cbne	a,?a_main+0+1,u82
+   268  00FA' 80 04              	jmp	u81
+   269  00FC'                    u82:
+   270  00FC' 50 04              	bnc	u80
+   271  00FE' 80 00              	jmp	u81
+   272  0100'                    u81:
+   273  0100' 80 DD              	jmp	l16
+   274  0102'                    u80:
+   275  0102'                    l17:
+   276                           	line	30
+   277  0102' 05 01'             	inc	?a_main+0+1
+   278  0104' E5 01'             	mov	a,?a_main+0+1
+   279  0106' 70 02              	jnz	u90
+   280  0108' 05 00'             	inc	?a_main+0
+   281  010A'                    u90:
+   282  010A' E5 01'             	mov	a,?a_main+0+1
+   283  010C' 24 FA              	add	a,#low -(6)
+   284  010E' E5 00'             	mov	a,?a_main+0
+   285  0110' 34 FF              	addc	a,#high -(6)
+   286  0112' 50 02              	bnc	u101
+   287  0114' 80 03              	jmp	u100
+   288  0116'                    u101:
+   289  0116' 02 0097'           	jmp	l9
+   290  0119'                    u100:
+   291  0119'                    l10:
+   292                           ;main.c: 44: }
+   293                           
+   294                           ;main.c: 46: }
+   295                           
+   296                           ;main.c: 47: for(i=0;i<10;i++){
+   297                           
+   298                           	line	47
+   299  0119' E4                 	clr	a
+   300  011A' F5 00'             	mov	?a_main+0,a
+   301  011C' F5 01'             	mov	?a_main+0+1,a
+   302  011E' E5 01'             	mov	a,?a_main+0+1
+   303  0120' 24 F6              	add	a,#low -(10)
+   304  0122' E5 00'             	mov	a,?a_main+0
+   305  0124' 34 FF              	addc	a,#high -(10)
+   306  0126' 50 02              	bnc	u111
+   307  0128' 80 02              	jmp	u110
+   308  012A'                    u111:
+   309  012A' 80 03              	jmp	l20
+   310  012C'                    u110:
+   311  012C' 02 01DB'           	jmp	l21
+   312  012F'                    l20:
+   313                           ;main.c: 48: for(k=0;k<=7;k++){
+   314                           
+   315                           	line	48
+   316  012F' E4                 	clr	a
+   317  0130' F5 02'             	mov	?a_main+2,a
+   318  0132' F5 03'             	mov	?a_main+2+1,a
+   319  0134' E5 03'             	mov	a,?a_main+2+1
+   320  0136' 24 F8              	add	a,#low -(8)
+   321  0138' E5 02'             	mov	a,?a_main+2
+   322  013A' 34 FF              	addc	a,#high -(8)
+   323  013C' 50 02              	bnc	u121
+   324  013E' 80 02              	jmp	u120
+   325  0140'                    u121:
+   326  0140' 80 02              	jmp	l23
+   327  0142'                    u120:
+   328  0142' 80 4C              	jmp	l24
+   329  0144'                    l23:
+   330                           ;main.c: 49: P0 = str2[k];
+   331                           
+   332                           	line	49
+   333  0144' E5 03'             	mov	a,?a_main+2+1
+   334  0146' 25 0B'             	add	a,?a_main+10+1
+   335  0148' F5 82              	mov	dpl,a
+   336  014A' E5 02'             	mov	a,?a_main+2
+   337  014C' 35 0A'             	addc	a,?a_main+10
+   338  014E' F5 83              	mov	dph,a
+   339                           	global	ldc_byte
+   340  0150' 12 0000'           	call	ldc_byte
+   341  0153' F5 80              	mov	080h,a
+   342                           ;main.c: 50: P2 = 0x3;
+   343                           
+   344                           	line	50
+   345  0155' 75 A0 03           	mov	0A0h,#3
+   346                           ;main.c: 51: P2 = 0x2;
+   347                           
+   348                           	line	51
+   349  0158' 75 A0 02           	mov	0A0h,#2
+   350                           ;main.c: 52: if(k>6) {
+   351                           
+   352                           	line	52
+   353  015B' E5 03'             	mov	a,?a_main+2+1
+   354  015D' 24 F9              	add	a,#low -(7)
+   355  015F' E5 02'             	mov	a,?a_main+2
+   356  0161' 34 FF              	addc	a,#high -(7)
+   357  0163' 50 02              	bnc	u131
+   358  0165' 80 02              	jmp	u130
+   359  0167'                    u131:
+   360  0167' 80 11              	jmp	l26
+   361  0169'                    u130:
+   362                           ;main.c: 53: P0 = str3[0];
+   363                           
+   364                           	line	53
+   365  0169' 85 0C' 83          	mov	dph,?a_main+12
+   366  016C' 85 0D' 82          	mov	dpl,?a_main+12+1
+   367                           	global	ldc_byte
+   368  016F' 12 0000'           	call	ldc_byte
+   369  0172' F5 80              	mov	080h,a
+   370                           ;main.c: 54: P2 = 0x3;
+   371                           
+   372                           	line	54
+   373  0174' 75 A0 03           	mov	0A0h,#3
+   374                           ;main.c: 55: P2 = 0x2;
+   375                           
+   376                           	line	55
+   377  0177' 75 A0 02           	mov	0A0h,#2
+   378                           	line	56
+   379  017A'                    l26:
+   380                           	line	48
+   381  017A' 05 03'             	inc	?a_main+2+1
+   382  017C' E5 03'             	mov	a,?a_main+2+1
+   383  017E' 70 02              	jnz	u140
+   384  0180' 05 02'             	inc	?a_main+2
+   385  0182'                    u140:
+   386  0182' E5 03'             	mov	a,?a_main+2+1
+   387  0184' 24 F8              	add	a,#low -(8)
+   388  0186' E5 02'             	mov	a,?a_main+2
+   389  0188' 34 FF              	addc	a,#high -(8)
+   390  018A' 50 02              	bnc	u151
+   391  018C' 80 02              	jmp	u150
+   392  018E'                    u151:
+   393  018E' 80 B4              	jmp	l23
+   394  0190'                    u150:
+   395  0190'                    l24:
+   396                           ;main.c: 56: }
+   397                           
+   398                           ;main.c: 57: }
+   399                           
+   400                           ;main.c: 58: for(k=0;k<=9;k++){
+   401                           
+   402                           	line	58
+   403  0190' E4                 	clr	a
+   404  0191' F5 02'             	mov	?a_main+2,a
+   405  0193' F5 03'             	mov	?a_main+2+1,a
+   406  0195' E5 03'             	mov	a,?a_main+2+1
+   407  0197' 24 F6              	add	a,#low -(10)
+   408  0199' E5 02'             	mov	a,?a_main+2
+   409  019B' 34 FF              	addc	a,#high -(10)
+   410  019D' 50 02              	bnc	u161
+   411  019F' 80 02              	jmp	u160
+   412  01A1'                    u161:
+   413  01A1' 80 02              	jmp	l27
+   414  01A3'                    u160:
+   415  01A3' 80 1F              	jmp	l28
+   416  01A5'                    l27:
+   417                           ;main.c: 59: P0 = 0x10;
+   418                           
+   419                           	line	59
+   420  01A5' 75 80 10           	mov	080h,#16
+   421                           ;main.c: 60: P2 = 0x1;
+   422                           
+   423                           	line	60
+   424  01A8' 75 A0 01           	mov	0A0h,#1
+   425                           ;main.c: 61: P2 = 0x0;
+   426                           
+   427                           	line	61
+   428  01AB' 75 A0 00           	mov	0A0h,#0
+   429                           	line	58
+   430  01AE' 05 03'             	inc	?a_main+2+1
+   431  01B0' E5 03'             	mov	a,?a_main+2+1
+   432  01B2' 70 02              	jnz	u170
+   433  01B4' 05 02'             	inc	?a_main+2
+   434  01B6'                    u170:
+   435  01B6' E5 03'             	mov	a,?a_main+2+1
+   436  01B8' 24 F6              	add	a,#low -(10)
+   437  01BA' E5 02'             	mov	a,?a_main+2
+   438  01BC' 34 FF              	addc	a,#high -(10)
+   439  01BE' 50 02              	bnc	u181
+   440  01C0' 80 02              	jmp	u180
+   441  01C2'                    u181:
+   442  01C2' 80 E1              	jmp	l27
+   443  01C4'                    u180:
+   444  01C4'                    l28:
+   445                           	line	47
+   446  01C4' 05 01'             	inc	?a_main+0+1
+   447  01C6' E5 01'             	mov	a,?a_main+0+1
+   448  01C8' 70 02              	jnz	u190
+   449  01CA' 05 00'             	inc	?a_main+0
+   450  01CC'                    u190:
+   451  01CC' E5 01'             	mov	a,?a_main+0+1
+   452  01CE' 24 F6              	add	a,#low -(10)
+   453  01D0' E5 00'             	mov	a,?a_main+0
+   454  01D2' 34 FF              	addc	a,#high -(10)
+   455  01D4' 50 02              	bnc	u201
+   456  01D6' 80 03              	jmp	u200
+   457  01D8'                    u201:
+   458  01D8' 02 012F'           	jmp	l20
+   459  01DB'                    u200:
+   460  01DB'                    l21:
+   461                           ;main.c: 62: }
+   462                           
+   463                           ;main.c: 63: }
+   464                           
+   465                           ;main.c: 64: P0 = 0x14;
+   466                           
+   467                           	line	64
+   468  01DB' 75 80 14           	mov	080h,#20
+   469                           ;main.c: 65: P2 = 0x1;
+   470                           
+   471                           	line	65
+   472  01DE' 75 A0 01           	mov	0A0h,#1
+   473                           ;main.c: 66: P2 = 0x0;
+   474                           
+   475                           	line	66
+   476  01E1' 75 A0 00           	mov	0A0h,#0
+   477                           ;main.c: 67: for(i=6;i>0;i--){
+   478                           
+   479                           	line	67
+   480  01E4' 75 00' 00          	mov	?a_main+0,#high(6)
+   481  01E7' 75 01' 06          	mov	?a_main+0+1,#low(6)
+   482  01EA' E5 01'             	mov	a,?a_main+0+1
+   483  01EC' 45 00'             	orl	a,?a_main+0
+   484  01EE' 70 02              	bnz	u211
+   485  01F0' 80 02              	jmp	u210
+   486  01F2'                    u211:
+   487  01F2' 80 03              	jmp	l30
+   488  01F4'                    u210:
+   489  01F4' 02 0280'           	jmp	l31
+   490  01F7'                    l30:
+   491                           ;main.c: 68: for(k=7-i;k<=7;k++){
+   492                           
+   493                           	line	68
+   494  01F7' 74 07              	mov	a,#07h
+   495  01F9' C3                 	clr	c
+   496  01FA' 95 01'             	subb	a,?a_main+0+1
+   497  01FC' F5 03'             	mov	?a_main+2+1,a
+   498  01FE' 74 00              	mov	a,#0
+   499  0200' 95 00'             	subb	a,?a_main+0
+   500  0202' F5 02'             	mov	?a_main+2,a
+   501  0204' E5 03'             	mov	a,?a_main+2+1
+   502  0206' 24 F8              	add	a,#low -(8)
+   503  0208' E5 02'             	mov	a,?a_main+2
+   504  020A' 34 FF              	addc	a,#high -(8)
+   505  020C' 50 02              	bnc	u221
+   506  020E' 80 02              	jmp	u220
+   507  0210'                    u221:
+   508  0210' 80 02              	jmp	l33
+   509  0212'                    u220:
+   510  0212' 80 4C              	jmp	l34
+   511  0214'                    l33:
+   512                           ;main.c: 69: P0 = str2[k];
+   513                           
+   514                           	line	69
+   515  0214' E5 03'             	mov	a,?a_main+2+1
+   516  0216' 25 0B'             	add	a,?a_main+10+1
+   517  0218' F5 82              	mov	dpl,a
+   518  021A' E5 02'             	mov	a,?a_main+2
+   519  021C' 35 0A'             	addc	a,?a_main+10
+   520  021E' F5 83              	mov	dph,a
+   521                           	global	ldc_byte
+   522  0220' 12 0000'           	call	ldc_byte
+   523  0223' F5 80              	mov	080h,a
+   524                           ;main.c: 70: P2 = 0x3;
+   525                           
+   526                           	line	70
+   527  0225' 75 A0 03           	mov	0A0h,#3
+   528                           ;main.c: 71: P2 = 0x2;
+   529                           
+   530                           	line	71
+   531  0228' 75 A0 02           	mov	0A0h,#2
+   532                           ;main.c: 72: if(k>6) {
+   533                           
+   534                           	line	72
+   535  022B' E5 03'             	mov	a,?a_main+2+1
+   536  022D' 24 F9              	add	a,#low -(7)
+   537  022F' E5 02'             	mov	a,?a_main+2
+   538  0231' 34 FF              	addc	a,#high -(7)
+   539  0233' 50 02              	bnc	u231
+   540  0235' 80 02              	jmp	u230
+   541  0237'                    u231:
+   542  0237' 80 11              	jmp	l36
+   543  0239'                    u230:
+   544                           ;main.c: 73: P0 = str3[0];
+   545                           
+   546                           	line	73
+   547  0239' 85 0C' 83          	mov	dph,?a_main+12
+   548  023C' 85 0D' 82          	mov	dpl,?a_main+12+1
+   549                           	global	ldc_byte
+   550  023F' 12 0000'           	call	ldc_byte
+   551  0242' F5 80              	mov	080h,a
+   552                           ;main.c: 74: P2 = 0x3;
+   553                           
+   554                           	line	74
+   555  0244' 75 A0 03           	mov	0A0h,#3
+   556                           ;main.c: 75: P2 = 0x2;
+   557                           
+   558                           	line	75
+   559  0247' 75 A0 02           	mov	0A0h,#2
+   560                           	line	76
+   561  024A'                    l36:
+   562                           	line	68
+   563  024A' 05 03'             	inc	?a_main+2+1
+   564  024C' E5 03'             	mov	a,?a_main+2+1
+   565  024E' 70 02              	jnz	u240
+   566  0250' 05 02'             	inc	?a_main+2
+   567  0252'                    u240:
+   568  0252' E5 03'             	mov	a,?a_main+2+1
+   569  0254' 24 F8              	add	a,#low -(8)
+   570  0256' E5 02'             	mov	a,?a_main+2
+   571  0258' 34 FF              	addc	a,#high -(8)
+   572  025A' 50 02              	bnc	u251
+   573  025C' 80 02              	jmp	u250
+   574  025E'                    u251:
+   575  025E' 80 B4              	jmp	l33
+   576  0260'                    u250:
+   577  0260'                    l34:
+   578                           ;main.c: 76: }
+   579                           
+   580                           ;main.c: 77: }
+   581                           
+   582                           ;main.c: 78: P0 = 0xC0;
+   583                           
+   584                           	line	78
+   585  0260' 75 80 C0           	mov	080h,#192
+   586                           ;main.c: 79: P2 = 0x1;
+   587                           
+   588                           	line	79
+   589  0263' 75 A0 01           	mov	0A0h,#1
+   590                           ;main.c: 80: P2 = 0x0;
+   591                           
+   592                           	line	80
+   593  0266' 75 A0 00           	mov	0A0h,#0
+   594                           	line	67
+   595  0269' E5 01'             	mov	a,?a_main+0+1
+   596  026B' 24 FF              	add	a,#low (-01h)
+   597  026D' F5 01'             	mov	?a_main+0+1,a
+   598  026F' E5 00'             	mov	a,?a_main+0
+   599  0271' 34 FF              	addc	a,#high (-01h)
+   600  0273' F5 00'             	mov	?a_main+0,a
+   601  0275' E5 01'             	mov	a,?a_main+0+1
+   602  0277' 45 00'             	orl	a,?a_main+0
+   603  0279' 70 02              	bnz	u261
+   604  027B' 80 03              	jmp	u260
+   605  027D'                    u261:
+   606  027D' 02 01F7'           	jmp	l30
+   607  0280'                    u260:
+   608  0280'                    l31:
+   609                           ;main.c: 81: }
+   610                           
+   611                           ;main.c: 82: P0 = str3[0];
+   612                           
+   613                           	line	82
+   614  0280' 85 0C' 83          	mov	dph,?a_main+12
+   615  0283' 85 0D' 82          	mov	dpl,?a_main+12+1
+   616                           	global	ldc_byte
+   617  0286' 12 0000'           	call	ldc_byte
+   618  0289' F5 80              	mov	080h,a
+   619                           ;main.c: 83: P2 = 0x3;
+   620                           
+   621                           	line	83
+   622  028B' 75 A0 03           	mov	0A0h,#3
+   623                           ;main.c: 84: P2 = 0x2;
+   624                           
+   625                           	line	84
+   626  028E' 75 A0 02           	mov	0A0h,#2
+   627                           	line	86
+   628  0291'                    l6:
+   629                           	line	26
+   630  0291' 02 0078'           	jmp	l7
+   631  0294'                    l8:
+   632                           ;main.c: 86: }
+   633                           
+   634                           ;main.c: 87: }
+   635                           
+   636                           	line	87
+   637  0294'                    l2:
+   638  0294' 22                 	ret
+   639  0295'                    f1411:
+   640  0295' 02 0003'           	j	f1410
+   641                           	FNSIZE	_main,14,0
+   642                           	global	?a_main
+   643  0000                     f1412	equ	0
+   644                           	psect	strings,class=CODE
+   645                           	psect	strings
+   646  0000'                    u29:
+   647  0000' 46 72 69 65 6E 64  	db	"Friends",0
+              73 00              
+   648  0008'                    u19:
+   649  0008' 48 65 6C 6C 6F 21  	db	"Hello!",0
+              00                 
+   650  000F'                    u39:
+   651  000F' 20 00              	db	32,0
+   652  0000                     _A10	equ	162
+   653  0000                     _A11	equ	163
+   654  0000                     _A12	equ	164
+   655  0000                     _A13	equ	165
+   656  0000                     _A14	equ	166
+   657  0000                     _A15	equ	167
+   658  0000                     _A8	equ	160
+   659  0000                     _A9	equ	161
+   660  0000                     _AC	equ	214
+   661  0000                     _ACC0	equ	224
+   662  0000                     _ACC1	equ	225
+   663  0000                     _ACC2	equ	226
+   664  0000                     _ACC3	equ	227
+   665  0000                     _ACC4	equ	228
+   666  0000                     _ACC5	equ	229
+   667  0000                     _ACC6	equ	230
+   668  0000                     _ACC7	equ	231
+   669  0000                     _AD0	equ	128
+   670  0000                     _AD1	equ	129
+   671  0000                     _AD2	equ	130
+   672  0000                     _AD3	equ	131
+   673  0000                     _AD4	equ	132
+   674  0000                     _AD5	equ	133
+   675  0000                     _AD6	equ	134
+   676  0000                     _AD7	equ	135
+   677  0000                     _B0	equ	240
+   678  0000                     _B1	equ	241
+   679  0000                     _B2	equ	242
+   680  0000                     _B3	equ	243
+   681  0000                     _B4	equ	244
+   682  0000                     _B5	equ	245
+   683  0000                     _B6	equ	246
+   684  0000                     _B7	equ	247
+   685  0000                     _CY	equ	215
+   686  0000                     _EA	equ	175
+   687  0000                     _ES	equ	172
+   688  0000                     _ET0	equ	169
+   689  0000                     _ET1	equ	171
+   690  0000                     _EX0	equ	168
+   691  0000                     _EX1	equ	170
+   692  0000                     _F0	equ	213
+   693  0000                     _IE0	equ	137
+   694  0000                     _IE1	equ	139
+   695  0000                     _INT0	equ	178
+   696  0000                     _INT1	equ	179
+   697  0000                     _IT0	equ	136
+   698  0000                     _IT1	equ	138
+   699  0000                     _OV	equ	210
+   700  0000                     _P	equ	208
+   701  0000                     _P00	equ	128
+   702  0000                     _P01	equ	129
+   703  0000                     _P02	equ	130
+   704  0000                     _P03	equ	131
+   705  0000                     _P04	equ	132
+   706  0000                     _P05	equ	133
+   707  0000                     _P06	equ	134
+   708  0000                     _P07	equ	135
+   709  0000                     _P10	equ	144
+   710  0000                     _P11	equ	145
+   711  0000                     _P12	equ	146
+   712  0000                     _P13	equ	147
+   713  0000                     _P14	equ	148
+   714  0000                     _P15	equ	149
+   715  0000                     _P16	equ	150
+   716  0000                     _P17	equ	151
+   717  0000                     _P20	equ	160
+   718  0000                     _P21	equ	161
+   719  0000                     _P22	equ	162
+   720  0000                     _P23	equ	163
+   721  0000                     _P24	equ	164
+   722  0000                     _P25	equ	165
+   723  0000                     _P26	equ	166
+   724  0000                     _P27	equ	167
+   725  0000                     _P30	equ	176
+   726  0000                     _P31	equ	177
+   727  0000                     _P32	equ	178
+   728  0000                     _P33	equ	179
+   729  0000                     _P34	equ	180
+   730  0000                     _P35	equ	181
+   731  0000                     _P36	equ	182
+   732  0000                     _P37	equ	183
+   733  0000                     _PS	equ	188
+   734  0000                     _PT0	equ	185
+   735  0000                     _PT1	equ	187
+   736  0000                     _PX0	equ	184
+   737  0000                     _PX1	equ	186
+   738  0000                     _RB8	equ	154
+   739  0000                     _RD	equ	183
+   740  0000                     _REN	equ	156
+   741  0000                     _RI	equ	152
+   742  0000                     _RS0	equ	211
+   743  0000                     _RS1	equ	212
+   744  0000                     _RXD	equ	176
+   745  0000                     _SM0	equ	159
+   746  0000                     _SM1	equ	158
+   747  0000                     _SM2	equ	157
+   748  0000                     _T0	equ	180
+   749  0000                     _T1	equ	181
+   750  0000                     _TB8	equ	155
+   751  0000                     _TF0	equ	141
+   752  0000                     _TF1	equ	143
+   753  0000                     _TI	equ	153
+   754  0000                     _TR0	equ	140
+   755  0000                     _TR1	equ	142
+   756  0000                     _TXD	equ	177
+   757  0000                     _WR	equ	182
+   758  0000                     _ACC	equ	224
+   759  0000                     _B	equ	240
+   760  0000                     _DPH	equ	131
+   761  0000                     _DPL	equ	130
+   762  0000                     _IE	equ	168
+   763  0000                     _IP	equ	184
+   764  0000                     _P0	equ	128
+   765  0000                     _P1	equ	144
+   766  0000                     _P2	equ	160
+   767  0000                     _P3	equ	176
+   768  0000                     _PCON	equ	135
+   769  0000                     _PSW	equ	208
+   770  0000                     _SBUF	equ	153
+   771  0000                     _SCON	equ	152
+   772  0000                     _SP	equ	129
+   773  0000                     _TCON	equ	136
+   774  0000                     _TH0	equ	140
+   775  0000                     _TH1	equ	141
+   776  0000                     _TL0	equ	138
+   777  0000                     _TL1	equ	139
+   778  0000                     _TMOD	equ	137
+   779  0000                     _ACC_BITS	equ	224
+   780  0000                     _B_BITS	equ	240
+   781  0000                     _IE_BITS	equ	168
+   782  0000                     _IP_BITS	equ	184
+   783  0000                     _P0_BITS	equ	128
+   784  0000                     _P1_BITS	equ	144
+   785  0000                     _P2_BITS	equ	160
+   786  0000                     _P3_BITS	equ	176
+   787  0000                     _PCON_BITS	equ	135
+   788  0000                     _PSW_BITS	equ	208
+   789  0000                     _SCON_BITS	equ	152
+   790  0000                     _TCON_BITS	equ	136
+   791  0000                     _TMOD_BITS	equ	137
+   792                           	psect	rbss,class=DATA,space=1
+   793                           	psect	rbss
+   794                           	global	_end
+   795  0000'                    _end:
+   796  0000'                    	ds	2
+
+
+HI-TECH Software 8051 Macro Assembler V9.60                                Page 2
+Symbol Table                                           Sat Apr 02 17:00:49 2022
+
+       ?a_main 00000*             _B 000F0              l2 00294  
+            l3 0004B              l4 00078              _P 000D0  
+            l6 00291              l7 00078              l8 00294  
+            l9 00097             _B0 000F0             _B1 000F1  
+           _B2 000F2             _B3 000F3             _B4 000F4  
+           _B5 000F5             _B6 000F6             _A8 000A0  
+           _B7 000F7             _A9 000A1             _F0 000D5  
+           _AC 000D6             l10 00119             l20 0012F  
+           l12 0009E             l21 001DB             l13 000CF  
+           l30 001F7             _EA 000AF             l31 00280  
+           l23 00144             l15 000BD             l24 00190  
+           l16 000DF             l33 00214             l17 00102  
+           l34 00260             l26 0017A             l27 001A5  
+           l19 000F0             _P0 00080             l36 0024A  
+           l28 001C4             _P1 00090             _P2 000A0  
+           _P3 000B0             _IE 000A8             _T0 000B4  
+           _T1 000B5             _ES 000AC             _CY 000D7  
+           _IP 000B8             _RD 000B7             u10 00049  
+           u11 00047             u20 0006A             _RI 00098  
+           u30 00078             u31 00076             u40 00094  
+           _TI 00099             u41 00092             u50 000BD  
+           _PS 000BC             u19 00008             _OV 000D2  
+           u60 000CF             u61 000CD             u29 00000  
+           _SP 00081             u70 000F0             u62 000C9  
+           u39 0000F             u80 00102             u81 00100  
+           u90 0010A             u82 000FC             _WR 000B6  
+       _B_BITS 000F0            _A10 000A2            _A11 000A3  
+          _A12 000A4            _A13 000A5            _A14 000A6  
+          _A15 000A7            _AD0 00080            _AD1 00081  
+          _AD2 00082            _AD3 00083            _AD4 00084  
+          _AD5 00085            _AD6 00086            _AD7 00087  
+          _ACC 000E0            _P00 00080            _P01 00081  
+          _P10 00090            _P02 00082            _P11 00091  
+          _P03 00083            _P20 000A0            _P12 00092  
+          _P04 00084            _P21 000A1            _P13 00093  
+          _P05 00085            _P30 000B0            _P22 000A2  
+          _P14 00094            _P06 00086            _P31 000B1  
+          _P23 000A3            _P15 00095            _P07 00087  
+          _P32 000B2            _P24 000A4            _P16 00096  
+          _P33 000B3            _P25 000A5            _P17 00097  
+          _P34 000B4            _P26 000A6            _P35 000B5  
+          _P27 000A7            _P36 000B6            _P37 000B7  
+          _IE0 00089            _IE1 0008B            _ET0 000A9  
+          _ET1 000AB            _EX0 000A8            _EX1 000AA  
+          _DPH 00083            _DPL 00082            _IT0 00088  
+          _IT1 0008A            _RB8 0009A            u100 00119  
+          u101 00116            u110 0012C            u111 0012A  
+          u200 001DB            u120 00142            u201 001D8  
+          u121 00140            u210 001F4            u130 00169  
+          u211 001F2            u131 00167            _TF0 0008D  
+          _TB8 0009B            u220 00212            u140 00182  
+          _TF1 0008F            u221 00210            u230 00239  
+          u150 00190            u231 00237            u151 0018E  
+          _TH0 0008C            u240 00252            u160 001A3  
+          _TH1 0008D            u161 001A1            u250 00260  
+          u170 001B6            u251 0025E            u260 00280  
+          u180 001C4            u261 0027D            u181 001C2  
+          _SM0 0009F            u190 001CC            _SM1 0009E  
+          _TL0 0008A            _SM2 0009D            _PT0 000B9  
+          _TL1 0008B            _PT1 000BB            _RS0 000D3  
+          _RS1 000D4            _REN 0009C            _PX0 000B8  
+          _PX1 000BA            _TR0 0008C            _TR1 0008E  
+          _RXD 000B0            _PSW 000D0            _TXD 000B1  
+      _P0_BITS 00080        _P1_BITS 00090        _P2_BITS 000A0  
+          _end 00000        _P3_BITS 000B0        _IE_BITS 000A8  
+     _ACC_BITS 000E0        _IP_BITS 000B8           f1410 00003  
+         f1411 00295           f1412 00000           _ACC0 000E0  
+         _ACC1 000E1           _ACC2 000E2           _ACC3 000E3  
+         _ACC4 000E4           _ACC5 000E5           _ACC6 000E6  
+         _ACC7 000E7  stack_internal 00000*          _INT0 000B2  
+         _INT1 000B3           _PCON 00087           _SCON 00098  
+         _SBUF 00099           _TCON 00088           _TMOD 00089  
+         _main 00000       _PSW_BITS 000D0        ldc_byte 00000* 
+    _PCON_BITS 00087      _SCON_BITS 00098      _TCON_BITS 00088  
+    _TMOD_BITS 00089  
+
